@@ -157,8 +157,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func configureMenu() {
-        let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-        item.button?.title = "⌖"
+        let item = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        item.button?.title = "Crop Guide"
         item.button?.toolTip = "Crop Guide Overlay"
 
         let menu = NSMenu()
@@ -180,7 +180,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(NSMenuItem.separator())
 
-        let quitItem = NSMenuItem(title: "Quit", action: #selector(quit), keyEquivalent: "q")
+        let quitItem = NSMenuItem(title: "Quit Crop Guide Overlay", action: #selector(quit), keyEquivalent: "q")
         quitItem.target = self
         menu.addItem(quitItem)
 

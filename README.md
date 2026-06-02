@@ -33,6 +33,20 @@ make run
 
 Or double-click the app bundle.
 
+## Package
+
+```bash
+make package
+```
+
+The distributable zip is created at:
+
+```text
+.build/CropGuideOverlay-macOS.zip
+```
+
+GitHub Releases are built automatically when a tag matching `v*` is pushed.
+
 ## Auto-start
 
 ```bash

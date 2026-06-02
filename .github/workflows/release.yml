@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build-release:
+    runs-on: macos-14
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Build package
+        run: make package
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CropGuideOverlay-macOS
+          path: .build/CropGuideOverlay-macOS.zip
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            .build/CropGuideOverlay-macOS.zip \
+            --title "${GITHUB_REF_NAME}" \
+            --generate-notes

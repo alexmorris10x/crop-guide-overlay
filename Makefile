@@ -1,10 +1,13 @@
 APP_NAME := Crop Guide Overlay
 APP_PATH := .build/$(APP_NAME).app
 
-.PHONY: app run install-agent uninstall-agent clean
+.PHONY: app package run install-agent uninstall-agent clean
 
 app:
 	@Scripts/build-app.sh
+
+package:
+	@Scripts/package.sh
 
 run: app
 	@open "$(APP_PATH)"

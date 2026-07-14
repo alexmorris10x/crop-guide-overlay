@@ -67,3 +67,14 @@ Do a short test recording before a production take. macOS screenshots exclude th
 
 - macOS 13 or newer
 - Xcode command line tools
+
+## Contributing and support
+
+- Read [CONTRIBUTING.md](CONTRIBUTING.md) before proposing changes.
+- Use [GitHub Issues](https://github.com/alexmorris10x/crop-guide-overlay/issues) for reproducible bugs and focused feature requests.
+- Read [SECURITY.md](SECURITY.md) before reporting a vulnerability.
+- Support is best-effort; see [SUPPORT.md](SUPPORT.md).
+
+## License
+
+MIT. See [LICENSE](LICENSE). The original copyright notice is retained.

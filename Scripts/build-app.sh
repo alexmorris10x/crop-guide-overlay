@@ -17,6 +17,8 @@ swiftc \
   "$ROOT_DIR/Sources/CropGuideOverlay/main.swift" \
   -o "$EXECUTABLE"
 
+cp "$ROOT_DIR/Resources/AppIcon.icns" "$RESOURCES_DIR/AppIcon.icns"
+
 cat > "$CONTENTS_DIR/Info.plist" <<'PLIST'
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
@@ -30,6 +32,8 @@ cat > "$CONTENTS_DIR/Info.plist" <<'PLIST'
   <string>Crop Guide Overlay</string>
   <key>CFBundleDisplayName</key>
   <string>Crop Guide Overlay</string>
+  <key>CFBundleIconFile</key>
+  <string>AppIcon.icns</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>CFBundleShortVersionString</key>

@@ -20,3 +20,9 @@ uninstall-agent:
 
 clean:
 	@rm -rf .build
+
+.PHONY: test
+test:
+	@mkdir -p .build
+	@swiftc Sources/CropGuideOverlay/GuideGeometry.swift Tests/main.swift -o .build/geometry-tests
+	@.build/geometry-tests

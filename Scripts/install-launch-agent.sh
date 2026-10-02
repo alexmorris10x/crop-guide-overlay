@@ -12,8 +12,10 @@ if [[ ! -d "$APP_PATH" ]]; then
   exit 1
 fi
 
+mkdir -p "$HOME/Library/LaunchAgents"
 sed "s#__APP_PATH__#$APP_PATH#g" "$PLIST_SRC" > "$PLIST_DST"
 launchctl bootout "gui/$(id -u)" "$PLIST_DST" 2>/dev/null || true
+launchctl enable "gui/$(id -u)/com.10xoss.crop-guide-overlay"
 launchctl bootstrap "gui/$(id -u)" "$PLIST_DST"
 launchctl kickstart -k "gui/$(id -u)/com.10xoss.crop-guide-overlay"
 echo "Installed and started LaunchAgent: $PLIST_DST"

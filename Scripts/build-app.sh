@@ -13,8 +13,9 @@ rm -rf "$APP_DIR"
 mkdir -p "$MACOS_DIR" "$RESOURCES_DIR"
 
 swiftc \
+  -target "${ARCH:-$(uname -m)}-apple-macosx13.0" \
   -framework Cocoa \
-  "$ROOT_DIR/Sources/CropGuideOverlay/main.swift" \
+  "$ROOT_DIR"/Sources/CropGuideOverlay/*.swift \
   -o "$EXECUTABLE"
 
 cp "$ROOT_DIR/Resources/AppIcon.icns" "$RESOURCES_DIR/AppIcon.icns"
